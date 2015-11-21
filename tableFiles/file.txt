@@ -1,0 +1,14 @@
+Total pronouns pronoun Personal pronouns ppron 1st pers singular i
+1st pers plural we Impersonal pronouns ipron
+[Common verbs] verb Auxiliary verbs auxverb Past tense past Present tense present Adverbs adverb Prepositions preps Conjunctions conj Negations negate Quantifiers quant Numbers number
+Swear words swear
+Psychological Processes
+Social processes social Family family Friends friend
+Affective processes affect Positive emotion posemo Negative emotion negemo Anxiety anx Anger anger Sadness sad
+Cognitive processes cogmech Insight insight Discrepancy discrep Tentative tentat Inclusive incl Exclusive excl
+Perceptual processes percept See see Biological processes bio
+Body body Health health Sexual sexual Relativity relativ Motion motion Time time
+Personal Concerns
+Work work Death death Spoken categories
+Assent assent Nonfluencies nonfl Fillers filler Punctuation
+Total Punctuation AllPct Exclam Exclam Dash Dash Quote Quote Apostro Apostro OtherP OtherP

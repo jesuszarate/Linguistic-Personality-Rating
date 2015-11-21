@@ -1,0 +1,19 @@
+<entry>
+  <abbrev>sixltr</abbrev>
+  <persrtng>
+    <Na>0.047</Na>
+    <Ma>-0.078</Ma>
+    <Ps>-0.047</Ps>
+    <Op>0.035</Op>
+    <Co>0.042</Co>
+    <Ex>0.042</Ex>
+    <Ag>0.017</Ag>
+    <Ne>0.079</Ne>
+  </persrtng>
+
+  <!-- keywords are delimited by a , (comma)  -->
+  <keywords>
+    <greaterThan6></greaterThan6>
+  </keywords>
+</entry>
+
