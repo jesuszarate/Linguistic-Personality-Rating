@@ -1,17 +1,8 @@
 from xml_parser import get_categories
 from enum import Enum
- 
-# User's personality rating
-userRatng = dict([
-        ('na', 0), ('ma', 0), ('ps', 0), ('op', 0), \
-            ('co', 0), ('ex', 0), ('ag', 0), ('ne', 0)])
 
-tweet = "I am a fake tweet. She went swimming on the lake, we went swimming on the lake"
-
-ttweet = tweet.lower().split(' ')
-
-# Tweet should come in, in the form of (word, word_count)
-dtweet = dict.fromkeys(ttweet, 1)
+userRatng = dict()
+dtweet = dict()
 
 class pers(Enum):
     na = 1
@@ -55,7 +46,30 @@ def check_personality1(str, category, dict_tweet):
     else:
         return False;
 
-# Map through all of the words in a single tweet
-map(check_personality, dtweet)
-    
-print userRatng
+def rate_tweet(dict_tweet, usr_Ratings):
+
+    global dtweet
+    dtweet = dict_tweet
+    global userRatng
+    userRatng = usr_Ratings
+
+    # Map through all of the words in a single tweet
+    map(check_personality, dtweet)
+    return userRatng
+
+
+
+# User's personality rating
+uuu_userRatng = dict([
+        ('na', 0), ('ma', 0), ('ps', 0), ('op', 0), \
+            ('co', 0), ('ex', 0), ('ag', 0), ('ne', 0)]) # Shoud come from Greg's code
+
+#tweet = "I am a fake tweet. She went swimming on the lake, we went swimming on the lake"
+tweet = "today was a fun day"
+
+tttweet = tweet.lower().split(' ')
+
+# Tweet should come in, in the form of (word, word_count)
+ddd_dtweet = dict.fromkeys(tttweet, 1) # Should come from Gregs code
+
+print rate_tweet(ddd_dtweet, uuu_userRatng)

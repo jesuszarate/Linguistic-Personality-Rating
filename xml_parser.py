@@ -42,5 +42,3 @@ def get_categories():
     for i in range(cat_num):
         list.append(get_category(i))
     return list
-
-#print get_categories()
