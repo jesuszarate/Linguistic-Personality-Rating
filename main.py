@@ -34,7 +34,7 @@ def toCSVLine(data):
 	try:
 		result = str(data[0]) + ',' + ','.join(str(c) for c in data[1].values()) + ',\n'
 	except:
-		return 'BLAMO'
+		return 'Error Occured'
 	return result
 
 
@@ -51,4 +51,4 @@ list_of_cats = get_categories()
 loc_n_score = loc_n_text.map(lambda x: (x[0], rate_tweet(x[1], list_of_cats)))
 
 lines = loc_n_score.map(toCSVLine)
-lines.saveAsTextFile('BAM.csv')
+lines.saveAsTextFile('Rating.csv')
