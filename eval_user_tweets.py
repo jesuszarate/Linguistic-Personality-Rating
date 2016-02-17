@@ -2,6 +2,23 @@ import sys
 import urllib2
 
 
+#tweepy
+from tweepy import Stream
+from tweepy import OAuthHandler
+from tweepy.streaming import StreamListener
+from credentials import getConsumerKey
+from credentials import getConsumerSecret
+from credentials import getAccessToken
+from credentials import getAccessSecret
+
+
+consumerKey = getConsumerKey()
+consumerSecret = ''
+accessToken = ''
+accessSecret = ''
+
+
+
 screen_name = sys.argv[1]
 
 class MyException(Exception):
