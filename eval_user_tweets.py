@@ -1,6 +1,7 @@
+# For tutorial go to https://www.youtube.com/watch?v=pUUxmvvl2FE
+
 import sys
 import urllib2
-
 
 #tweepy
 from tweepy import Stream
@@ -13,9 +14,9 @@ from credentials import getAccessSecret
 
 
 consumerKey = getConsumerKey()
-consumerSecret = ''
-accessToken = ''
-accessSecret = ''
+consumerSecret = getConsumerSecret()
+accessToken = getAccessToken()
+accessSecret = getAccessSecret()
 
 
 
