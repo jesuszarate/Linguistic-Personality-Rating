@@ -19,6 +19,22 @@ accessToken = getAccessToken()
 accessSecret = getAccessSecret()
 
 
+class listener(StreamListener):
+    def on_data(self, data):
+        print data
+        return True
+
+    def on_error(self, status):
+        print status
+
+auth = OAuthHandler(consumerKey, consumerSecret)
+auth.set_access_token(accessToken, accessSecret)
+twitterStream = Stream(auth, listener())
+twitterStream.filter(track=["car"])
+
+
+
+
 
 screen_name = sys.argv[1]
 
