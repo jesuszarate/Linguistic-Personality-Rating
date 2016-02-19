@@ -1,24 +1,26 @@
 # For tutorial go to https://www.youtube.com/watch?v=pUUxmvvl2FE
 
+from __future__ import absolute_import, print_function
 import sys
 import urllib2
 
 #tweepy
-from tweepy import Stream
-from tweepy import OAuthHandler
-from tweepy.streaming import StreamListener
+#from tweepy import Stream
+#from tweepy import OAuthHandler
+#from tweepy.streaming import StreamListener
+import tweepy
 from credentials import getConsumerKey
 from credentials import getConsumerSecret
 from credentials import getAccessToken
 from credentials import getAccessSecret
 
+consumer_key = getConsumerKey()
+consumer_secret = getConsumerSecret()
+access_token = getAccessToken()
+access_secret = getAccessSecret()
 
-consumerKey = getConsumerKey()
-consumerSecret = getConsumerSecret()
-accessToken = getAccessToken()
-accessSecret = getAccessSecret()
 
-
+'''
 class listener(StreamListener):
     def on_data(self, data):
         print data
@@ -26,27 +28,21 @@ class listener(StreamListener):
 
     def on_error(self, status):
         print status
-
-auth = OAuthHandler(consumerKey, consumerSecret)
-auth.set_access_token(accessToken, accessSecret)
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_secret)
 twitterStream = Stream(auth, listener())
 twitterStream.filter(track=["car"])
+'''
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.secure = True
+auth.set_access_token(access_token, access_secret)
+
+api = tweepy.API(auth)
 
 
+stuff = api.user_timeline(screen_name = 'villordoos', count = 100, include_rts = True)
 
-
-
-screen_name = sys.argv[1]
-
-class MyException(Exception):
-    pass
-
-
-url = 'https://api.twitter.com/1.1/statuses/user_timeline.json?' + screen_name + '=twitterapi'
-
-try:
-    user_feed = urllib2.urlopen(url, timeout = 1).read()
-except urllib2.URLError as e:
-    print 'Unable to connect to ' + screen_name + '\n'
+print(stuff)
 
 
