@@ -41,8 +41,8 @@ def getTweets(user_handler):
     print (tweets)
 
     clean_tweets = tweets.encode('ascii', 'ignore').decode('ascii')
-    #with open('output.txt', 'w') as f:
-     #   f.write(clean_tweets)
+    with open('output.txt', 'w') as f:
+        f.write(clean_tweets)
 
 
 getTweets('villordoos')
