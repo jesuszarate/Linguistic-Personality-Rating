@@ -23,20 +23,20 @@ auth.set_access_token(access_token, access_secret)
 api = tweepy.API(auth)
 
 
-stuff = api.user_timeline(screen_name = 'villordoos', count = 100, include_rts = True)
-#stuff = api.user_timeline(screen_name = 'villordoos', count = 1, include_rts = True)
+def getTweets(user_handler):
+    stuff = api.user_timeline(screen_name = user_handler, count = 100, include_rts = True)
+
+    for s in stuff:
+        status = s
+
+        jsonStr = json.dumps(status._json)
+        j = json.loads(jsonStr)
+
+        print (j['text'])
+
+    
+    with open('output.json', 'w') as output_file:
+        output_file.write(json.dumps(status._json))
 
 
-
-for s in stuff:
-    status = s
-
-    jsonStr = json.dumps(status._json)
-    j = json.loads(jsonStr)
-
-    print (j['text'])
-
-
-with open('output.json', 'w') as output_file:
-    output_file.write(json.dumps(status._json))
-
+getTweets('villordoos')
