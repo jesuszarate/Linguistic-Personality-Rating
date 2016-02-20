@@ -31,7 +31,10 @@ def update_ratings(category, num):
                     category[e.value][1] + "as number"
 
 def check_personality(string):
+    #import pdb; pdb.set_trace()
     map(lambda category: check_personality1(string, category, dtweet), list_of_cats)
+    #for c in list_of_cats:
+    #   check_personality1(string, category, dtweet)
 
 def check_personality1(string, category, dict_tweet):
     word = string.lower() 
@@ -55,6 +58,7 @@ def rate_tweet_w_usr_rating(dict_tweet, usr_Ratings):
     return userRatng
 
 def rate_tweet(dict_tweet, categories):
+
     global list_of_cats
     list_of_cats = categories
     rating = dict([
