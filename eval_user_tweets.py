@@ -64,10 +64,12 @@ def getTweets(user_handler):
 
 def findMax(rating):
     max = ('ps', rating['ps'])
-    for r in rating:
-        if max[1] < r[1]:
-            max = r            
-    return max
+    #import pdb; pdb.set_trace()
+    #for r in rating:
+    for key, value in rating.items():
+        if max[1] < value:
+            max = (key, value)      
+    return max[0]
 
 
 def rateTweets(user_handler):
@@ -80,7 +82,7 @@ def rateTweets(user_handler):
     #print (getDefinitions())
 
     rating = rate_tweet(map_tweets, cats)
-
+    
     print ('\n\n')
     #print (findMax(rating))
     max_rtng = findMax(rating)
