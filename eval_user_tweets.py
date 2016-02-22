@@ -38,9 +38,17 @@ def map_to_count(s):
                         result_d[word] = 1
         return (result_d)
 
+def save_handler(user_handler):
+    with open('rated_history.txt', 'r+') as f:
+        #import pdb; pdb.set_trace()
+        for l in f:
+            if(user_handler in l):
+                return    
+        f.write(user_handler+"\n")
 
 def getTweets(user_handler):
-    stuff = api.user_timeline(screen_name = user_handler, count = 2000, include_rts = True)
+    
+    stuff = api.user_timeline(screen_name = user_handler, count = 500, include_rts = True)
 
     tweets = ''
     for s in stuff:
@@ -49,15 +57,18 @@ def getTweets(user_handler):
         jsonStr = json.dumps(status._json)
         j = json.loads(jsonStr)
         t = j['text']
-        #print (t)
+        print (t)
         tweets += t
 
 
     #print (tweets)
 
     clean_tweets = tweets.encode('ascii', 'ignore').decode('ascii')
-    with open('output.txt', 'w') as f:
-        f.write(clean_tweets)
+    
+    save_handler(user_handler)
+            
+    #with open('rated_history.txt', 'a') as f:
+    #    f.write(user_handler+"\n")
 
     return clean_tweets
 
