@@ -55,7 +55,6 @@ def checkForKeys():
 
 def getConsumerKey():
     checkForKeys()
-    print keyVals
     return keyVals['consumerKey']
 
 def getConsumerSecret():
