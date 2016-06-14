@@ -104,7 +104,8 @@ def rateTweets(user_handler):
     print (rating)
     print ("\n\n")
 
-if len(sys.argv) > 1:
+if len(sys.argv) > 2:
     rateTweets(sys.argv[1])
 else:
     print ('\n\n\tMust provide a user hanlder as a parameter to rate\n\n')
+    print ('\ti.e. EvaluateTweets.py @myUserName\n\n')
