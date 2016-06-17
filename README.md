@@ -1,3 +1,3 @@
 ##How to run:
     
-    * EvaluateTweets.py @userName
+* EvaluateTweets.py @userName
