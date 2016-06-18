@@ -39,7 +39,7 @@ def map_to_count(s):
         return (result_d)
 
 def save_handler(user_handler):
-    with open('rated_history.txt', 'r+') as f:
+    with open('RatingSystemFiles/rated_history.txt', 'r+') as f:
         #import pdb; pdb.set_trace()
         for l in f:
             if(user_handler in l):
@@ -104,7 +104,7 @@ def rateTweets(user_handler):
     print (rating)
     print ("\n\n")
 
-if len(sys.argv) > 2:
+if len(sys.argv) > 1:
     rateTweets(sys.argv[1])
 else:
     print ('\n\n\tMust provide a user hanlder as a parameter to rate\n\n')
