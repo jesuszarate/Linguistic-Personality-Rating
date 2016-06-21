@@ -1,3 +1,3 @@
 all:
-	rm *~
-	rm *.pyc
+	rm *~ rm *.pyc
+	
