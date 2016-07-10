@@ -6,10 +6,11 @@ import sys
 #tweepy
 import tweepy
 import json
-from credentials import getConsumerKey
-from credentials import getConsumerSecret
-from credentials import getAccessToken
-from credentials import getAccessSecret
+
+from credentials.credentials import getConsumerKey
+from credentials.credentials import getConsumerSecret
+from credentials.credentials import getAccessToken
+from credentials.credentials import getAccessSecret
 from xml_parser import get_categories
 from personality_calc import rate_tweet
 from trait_definitions import getDefinitions
