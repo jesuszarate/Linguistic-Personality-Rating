@@ -11,7 +11,7 @@ from credentials.credentials import getConsumerKey
 from credentials.credentials import getConsumerSecret
 from credentials.credentials import getAccessToken
 from credentials.credentials import getAccessSecret
-from xml_parser import get_categories
+from RatingSystemFiles.xml_parser import get_categories
 from personality_calc import rate_tweet
 from trait_definitions import getDefinitions
 
