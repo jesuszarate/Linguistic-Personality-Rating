@@ -1,4 +1,4 @@
-from xml_parser import get_categories
+from RatingSystemFiles.xml_parser import get_categories
 from enum import Enum
 
 userRatng = dict()
