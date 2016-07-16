@@ -1,6 +1,6 @@
 from xml.dom import minidom
 
-xmldoc = minidom.parse('ratings.xml')
+xmldoc = minidom.parse('RatingSystemFiles/ratings.xml')
 itemlist = xmldoc.getElementsByTagName('entry')
 
 #Number of categories
