@@ -17,7 +17,8 @@ def errorOutput(lines):
         print m
 
 def checkForKeys():
-    fname = 'keys.txt'
+    fname = 'credentials/keys.txt'
+    print 'here'
     global keyVals
     keyVals = {}
     if os.path.isfile(fname):
