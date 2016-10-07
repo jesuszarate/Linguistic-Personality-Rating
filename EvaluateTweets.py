@@ -47,6 +47,9 @@ def save_handler(user_handler):
                 return    
         f.write(user_handler+"\n")
 
+
+# Gets the tweets from the specified userhandler
+# throws an exception if the user_handler is not valid.
 def getTweets(user_handler):
     
     stuff = api.user_timeline(screen_name = user_handler, count = 500, include_rts = True)
@@ -60,9 +63,6 @@ def getTweets(user_handler):
         t = j['text']
         print (t)
         tweets += t
-
-
-    #print (tweets)
 
     clean_tweets = tweets.encode('ascii', 'ignore').decode('ascii')
     
@@ -87,8 +87,10 @@ def findMax(rating):
 def rateTweets(user_handler):
     cats = get_categories()
     #tweets = getTweets('villordoos')
-    tweets = getTweets(user_handler)
 
+    
+    tweets = getTweets(user_handler)
+    
     map_tweets = map_to_count(tweets)
     print ("\n\n\t")
     #print (getDefinitions())
