@@ -88,24 +88,27 @@ def rateTweets(user_handler):
     cats = get_categories()
     #tweets = getTweets('villordoos')
 
-    
-    tweets = getTweets(user_handler)
-    
-    map_tweets = map_to_count(tweets)
-    print ("\n\n\t")
+    try:
+	    tweets = getTweets(user_handler)
+	    
+	    map_tweets = map_to_count(tweets)
+	    print ("\n\n\t")
     #print (getDefinitions())
 
-    rating = rate_tweet(map_tweets, cats)
+	    rating = rate_tweet(map_tweets, cats)
     
-    print ('\n\n')
+	    print ('\n\n')
     #print (findMax(rating))
-    max_rtng = findMax(rating)
-    definition = getDefinitions()[max_rtng]
-    print (definition)
-    print ('\n\n')
+	    max_rtng = findMax(rating)
+	    definition = getDefinitions()[max_rtng]
+	    print (definition)
+	    print ('\n\n')
 
-    print (rating)
-    print ("\n\n")
+	    print (rating)
+	    print ("\n\n")
+    except tweepy.TweepError:
+	    print ('Error: You possibly provided the wrong username or are not allowed to view this person\'s profile!')
+
 
 if len(sys.argv) > 1:
     rateTweets(sys.argv[1])
